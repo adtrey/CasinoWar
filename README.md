@@ -1,7 +1,6 @@
-# CasinoWar
 Asher Dauer & Raanan Glashofer
-CasinoWar Stage 1
-
+CasinoWar
+Stage 1: User Centered Design
 Who uses it?
 People who want an online version of Casino War. 
 Why does he use it? What is he trying to accomplish when he uses it?
@@ -16,3 +15,45 @@ He uses it by first providing a balance and a betting limit (which will automati
 After this he can enter a game and dictate his bet amount each hand.
 In order to be successful, he has to defeat the house advantage/odds and win hands. 
 He will be able to check his career stats (balance, total hands played, and total win percentage).
+
+
+Stage 2: Data Model
+Player Class
+Instance Variables - balance (double), totalHandsPlayed (int), playerWins (int), userID (int), name (String)
+
+Methods:
+Withdraw
+Deposit
+Enter Game
+Leave Game
+double getWinPercentage()
+int getTotalHandsPlayed()
+
+House Class
+Singleton file
+Instance Variables - totalHandsPlayed (int), houseWins (int), HouseBalance(double), AggregatePlayerBalance(double), players (Set), HouseOnline (Boolean),
+
+
+Methods:
+double getWinPercentage()
+boolean checkHouseBalanceIsSufficient(double house, double players)
+
+Deck Class
+Instance variables - Array of length 52
+Constructor - Fill deck  
+	Sub class: Card:
+		Instance Variables
+int value
+Enum suit
+
+Methods: 
+pickRandomCard
+fillDeck()
+
+Game Class
+Instance Variables - player (Player), house (House), deck (Deck)
+
+Methods:
+void playHand(int bet)
+void updateRecords()
+Not necessary for now: asCard (for UI)
